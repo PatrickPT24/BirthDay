@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wishes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video autoplay muted loop class="background-video">
+        <source src="/bgv2.mp4" type="video/mp4"> <!-- Correct video path -->
+    </video>
+    <div class="background-overlay"></div>
+    <div class="container">
+        <div class="input-section">
+            <h1>🎉 Birthday Wish 🎉</h1>
+            <form id="birthdayForm">
+                <input type="text" id="name" placeholder="Enter Name" required>
+                <button type="submit">Submit!</button>
+            </form>
+        </div>
+        <div class="output-section hidden" id="outputSection">
+            <h2 id="outputHappyBirthday"></h2>
+            <h3 id="outputName"></h3>
+            <p id="outputMessage"></p>
+            <div class="cake-container">
+                <img src="cake.jpg" alt="Birthday Cake" class="cake">
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

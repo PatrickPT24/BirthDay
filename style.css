@@ -1,0 +1,195 @@
+/* Background setup */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Video styling */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2; /* Ensure the video is at the lowest layer */
+}
+
+/* Dark background with transparency */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1; /* Keep the overlay above the video but below the container */
+    pointer-events: none; /* Allow clicks to pass through the overlay */
+}
+
+/* Container Styling */
+.container {
+    background: rgba(255, 255, 255, 0.345); /* Slightly transparent for design */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    color: #000;
+    max-width: 400px;
+    width: 90%;
+    z-index: 1; /* Make sure the container is above the overlay and video */
+    position: relative; /* Ensure z-index works */
+}
+
+/* Header Styling */
+h1 {
+    font-size: 2.2rem;
+    color: #ffcc33;
+    margin-bottom: 20px;
+}
+
+/* Input Styling */
+input {
+    width: 70%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: black;
+    font-size: 16px;
+    outline: none;
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* Button Style */
+button {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #cd4cad, #ff4500);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    width: 80%;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #6ce4b6, #ff6347);
+}
+
+/* Output Section Styling */
+.hidden {
+    display: none;
+}
+
+.hidden-input {
+    display: none;
+}
+
+.output-section h2 {
+    font-size: 2.0rem;
+    color: #48c753;
+    animation: fadeIn 1.5s forwards;
+    /* margin-bottom: 10px; */
+}
+
+.output-section h3 {
+    font-size: 4.2rem;
+    color: #e425b4;
+    font-weight: 700;
+    animation: fadeIn 1.5s forwards;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.output-section p {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: whitesmoke;
+    animation: slideIn 2s forwards;
+    margin: 0;
+}
+
+.output-section {
+    animation: blurEffect 1.5s ease-in-out both;
+}
+
+@keyframes blurEffect {
+    0% { filter: blur(5px); opacity: 0; }
+    100% { filter: blur(0); opacity: 1; }
+}
+
+/* Adding more complex cake animation */
+.cake-container {
+    margin-top: 30px;
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 20px 5px rgba(255, 165, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px 10px rgba(255, 165, 0, 1);
+    }
+    100% {
+        box-shadow: 0 0 20px 5px rgba(255, 165, 0, 0.5);
+    }
+}
+
+.cake {
+    width: 220px;
+    height: auto;
+    animation: bounceCake 2s infinite;
+}
+
+@keyframes bounceCake {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+/* Additional Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Firework Effects (optional) */
+body::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #ffdd00, transparent);
+    animation: firework 3s linear infinite;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+}
+
+@keyframes firework {
+    0% { transform: scale(0.1); opacity: 0.1; }
+    50% { transform: scale(1.5); opacity: 1; }
+    100% { transform: scale(0.1); opacity: 0.1; }
+}
